@@ -1,4 +1,3 @@
-// frontend/src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -9,9 +8,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact component={Home} />
-        <Route path="/artists" component={ArtistList} />
-        <Route path="/albums" component={AlbumList} />
+        <Route path="/" element={<Home />} />
+        <Route path="/artists" element={<ArtistList />} />
+        <Route path="/albums" element={<AlbumList />} />
       </Routes>
     </Router>
   );
