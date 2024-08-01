@@ -1,0 +1,32 @@
+my-music-app/
+├── backend/
+│   ├── config/
+│   │   └── db.js
+│   ├── controllers/
+│   │   ├── artistController.js
+│   │   ├── albumController.js
+│   │   └── userController.js
+│   ├── models/
+│   │   ├── Artist.js
+│   │   ├── Album.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── artistRoutes.js
+│   │   ├── albumRoutes.js
+│   │   └── userRoutes.js
+│   ├── app.js
+│   └── server.js
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── ArtistList.js
+│   │   │   └── AlbumList.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── ...
+├── .env
+├── package.json
+└── README.md
