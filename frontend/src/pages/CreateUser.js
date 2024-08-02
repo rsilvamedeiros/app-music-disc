@@ -21,6 +21,7 @@ const CreateUser = () => {
         `${process.env.REACT_APP_API_URL}/api/users/register`,
         user
       );
+
       alert("Usuário criado com sucesso!");
       setUser({ username: "", password: "", role: "Cliente" }); // Resetando o formulário após sucesso
     } catch (error) {
@@ -74,5 +75,7 @@ const CreateUser = () => {
     </Container>
   );
 };
+
+console.log("API URL:", process.env.REACT_APP_API_URL);
 
 export default CreateUser;
