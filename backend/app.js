@@ -21,3 +21,9 @@ app.use("/api/artists", artistRoutes);
 app.use("/api/albums", albumRoutes);
 
 module.exports = app;
+
+// middleware para lidar com erros
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Erro no servidor", error: err.message });
+});

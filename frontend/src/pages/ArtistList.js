@@ -15,6 +15,9 @@ const ArtistList = () => {
   return (
     <Container>
       <Row>
+        <h1>Artistas</h1>
+      </Row>
+      <Row>
         {artists.map((artist) => (
           <Col key={artist._id} md={4}>
             <Card>
