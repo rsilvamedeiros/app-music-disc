@@ -6,7 +6,7 @@ const CreateUser = () => {
   const [user, setUser] = useState({
     username: "",
     password: "",
-    role: "",
+    role: "Cliente", // Valor padrão
   });
 
   const handleChange = (e) => {
@@ -16,8 +16,13 @@ const CreateUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/users/register", user);
+      // Usar variável de ambiente para a URL da API
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/users/register`,
+        user
+      );
       alert("Usuário criado com sucesso!");
+      setUser({ username: "", password: "", role: "Cliente" }); // Resetando o formulário após sucesso
     } catch (error) {
       alert("Erro ao criar usuário");
     }
@@ -50,12 +55,17 @@ const CreateUser = () => {
         <Form.Group controlId="role">
           <Form.Label>Função</Form.Label>
           <Form.Control
-            type="text"
+            as="select"
             name="role"
             value={user.role}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="Admin">Admin</option>
+            <option value="Secretaria">Secretaria</option>
+            <option value="Publicador">Publicador</option>
+            <option value="Cliente">Cliente</option>
+          </Form.Control>
         </Form.Group>
         <Button variant="primary" type="submit">
           Criar Usuário

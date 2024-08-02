@@ -15,6 +15,9 @@ const AlbumList = () => {
   return (
     <Container>
       <Row>
+        <h1>Albuns</h1>
+      </Row>
+      <Row>
         {albums.map((album) => (
           <Col key={album._id} md={4}>
             <Card>
